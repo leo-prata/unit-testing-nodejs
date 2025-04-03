@@ -1,0 +1,27 @@
+{
+  "name": "apipostandcomments",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "Leonardo Prata",
+  "license": "ISC",
+  "description": "API para criacao de posts e comentarios",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-async-errors": "^3.1.1",
+    "prisma": "^6.5.0"
+  }
+}
