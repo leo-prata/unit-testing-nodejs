@@ -1,4 +1,4 @@
-import {Router, Request, Response} from 'express';
+import { Router, Request, Response } from 'express';
 
 import CreatePostController from './controllers/post/CreatePostController';
 import ListPostController from './controllers/post/ListPostController';
@@ -20,4 +20,4 @@ router.post('/comments', CreateCommentController.handle);
 router.get('/comments/:postId', ListCommentsByPostController.handle);
 router.delete('/comments/:id', RemoveCommentController.handle);
 
-export {router};
+export { router };

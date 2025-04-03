@@ -1,27 +1,26 @@
-import prismaClient from "../../prisma";
+import prismaClient from '../../prisma';
 
 interface CommentRequest {
-    postId: number;
+	postId: number;
 }
 
-class ListCommentsByPostService{
-    async execute({ postId }: CommentRequest){
-        const comments = await prismaClient.comment.findMany({
-            where: {
-                postId
-            },
-            select: {
-                id: true,
-                content: true,
-            },
-            orderBy: {
-                createdAt: "desc"
-            }
-            
-        });
+class ListCommentsByPostService {
+	async execute({ postId }: CommentRequest) {
+		const comments = await prismaClient.comment.findMany({
+			where: {
+				postId,
+			},
+			select: {
+				id: true,
+				content: true,
+			},
+			orderBy: {
+				createdAt: 'desc',
+			},
+		});
 
-        return comments;
-    }
+		return comments;
+	}
 }
 
 export default new ListCommentsByPostService();

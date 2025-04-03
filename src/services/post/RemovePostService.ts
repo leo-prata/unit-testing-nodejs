@@ -1,19 +1,19 @@
-import prismaClient from "../../prisma";
+import prismaClient from '../../prisma';
 
 interface PostRequest {
-    id: number;
+	id: number;
 }
 
-class RemovePostService{
-    async execute({id}: PostRequest){
-        const post = await prismaClient.post.delete({
-            where: {
-                id: id
-            }
-        });
+class RemovePostService {
+	async execute({ id }: PostRequest) {
+		const post = await prismaClient.post.delete({
+			where: {
+				id: id,
+			},
+		});
 
-        return post;
-    }
+		return post;
+	}
 }
 
 export default new RemovePostService();

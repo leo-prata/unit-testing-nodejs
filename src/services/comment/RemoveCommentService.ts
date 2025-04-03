@@ -1,19 +1,19 @@
-import prismaClient from "../../prisma";
+import prismaClient from '../../prisma';
 
 interface CommentRequest {
-    id: number;
+	id: number;
 }
 
-class RemoveCommentService{
-    async execute({ id }: CommentRequest){
-        const comment = await prismaClient.comment.delete({
-            where: {
-                id: id
-            }
-        });
+class RemoveCommentService {
+	async execute({ id }: CommentRequest) {
+		const comment = await prismaClient.comment.delete({
+			where: {
+				id: id,
+			},
+		});
 
-        return comment;
-    }
+		return comment;
+	}
 }
 
 export default new RemoveCommentService();
